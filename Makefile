@@ -14,6 +14,15 @@ create-day:
 	touch day${DAY}/solution.py
 	touch day${DAY}/test_solution.py
 
+
+# ------------------------------------
+#  Run
+# ------------------------------------
+
+.PHONY: test
+test:
+	@[ "${DAY}" ] && pytest day${DAY}/ || pytest
+
 # Implements this pattern for autodocumenting Makefiles:
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 #
