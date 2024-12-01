@@ -14,6 +14,52 @@ ruff = "^0.8.1"
 pytest = "^8.3.3"
 mypy = "^1.13.0"
 
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "A",
+    "ANN",
+    "ARG",
+    "B",
+    "BLE",
+    "C4",
+    "C90",
+    "COM",
+    "E",
+    "EM",
+    "F",
+    "FA",
+    "FBT",
+    "FURB",
+    "I",
+    "ICN",
+    "ISC",
+    "N",
+    "PERF",
+    "PIE",
+    "PL",
+    "PT",
+    "PTH",
+    "PYI",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "T10",
+    "TC",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = ["ANN201", "S101"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

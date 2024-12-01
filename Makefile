@@ -25,8 +25,8 @@ test:
 
 .PHONY: lint
 lint:
-	ruff check
 	ruff format
+	ruff check --fix
 	mypy .
 
 # Implements this pattern for autodocumenting Makefiles:
