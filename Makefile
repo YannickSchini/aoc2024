@@ -23,6 +23,12 @@ create-day:
 test:
 	@[ "${DAY}" ] && pytest day${DAY}/ || pytest
 
+.PHONY: lint
+lint:
+	ruff check
+	ruff format
+	mypy .
+
 # Implements this pattern for autodocumenting Makefiles:
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 #
