@@ -11,3 +11,4 @@ I’ll try to note down what was new for me everyday.
     - I wasn’t super familiar with `NewType`, `partial` so I’m glad I had an opportunity to work with those
     - I often forget to use `zip` when working on several iterables so I’m glad I thought about it this time
     - `Counter` is something I discoved today !
+    - Setting up `pytest`, `ruff` and `mypy` also isn’t something I do everyday, so a bit of practice never hurts
