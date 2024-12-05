@@ -9,6 +9,7 @@ NAME = aoc2024
 .PHONY: create-day
 create-day:
 	mkdir day${DAY}/
+	touch day${DAY}/__init__.py
 	touch day${DAY}/input.txt
 	touch day${DAY}/test.txt
 	touch day${DAY}/solution.py
