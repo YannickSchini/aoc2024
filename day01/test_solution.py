@@ -1,5 +1,6 @@
 import pytest
-from solution import (
+
+from day01.solution import (
     LocationList,
     compute_distance,
     compute_similarity,

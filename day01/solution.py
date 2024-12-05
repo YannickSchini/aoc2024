@@ -4,10 +4,11 @@ from pathlib import Path
 from typing import NewType
 
 LocationList = NewType("LocationList", list[int])
+CURRENT_FOLDER = Path(__file__).parent
 
 
 def get_lists(filename: str) -> tuple[LocationList, LocationList]:
-    with Path(filename).open() as f:
+    with (CURRENT_FOLDER / filename).open() as f:
         lines = f.readlines()
 
     list_a = []
