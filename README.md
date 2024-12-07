@@ -20,3 +20,8 @@ I’ll try to note down what was new for me everyday.
 
 - Day 03: Regexes !
     - Playing around with regexes is always fun (as long as their complexity stays manageable !)
+
+- Day 04:
+    - Some good debugging practices when entangled in off-by-1 errors with indexes
+    - A good idea about convolutions !
+    - I’m quite satisfied with how I split up the problem, and how tests make it way easier to write the code
