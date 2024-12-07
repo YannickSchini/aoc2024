@@ -1,4 +1,5 @@
 from day04.solution import (
+    apply_xmas_convolution_to_position,
     create_grid,
     find_diagonal_patterns,
     find_horizontal_patterns,
@@ -7,9 +8,11 @@ from day04.solution import (
     get_low_left_to_up_right_diagonal_grid,
     get_up_left_to_low_right_diagonal_grid,
     part_1,
+    part_2,
 )
 
 PART_1_TEST_ANSWER = 18
+PART_2_TEST_ANSWER = 9
 NUMBER_OF_HORIZONTAL_XMAS_IN_TEST = 5
 NUMBER_OF_VERTICAL_XMAS_IN_TEST = 3
 NUMBER_OF_DIAGONAL_XMAS_IN_TEST = 10
@@ -17,6 +20,10 @@ NUMBER_OF_DIAGONAL_XMAS_IN_TEST = 10
 
 def test_part_1():
     assert part_1("test.txt") == PART_1_TEST_ANSWER
+
+
+def test_part_2():
+    assert part_2("test.txt") == PART_2_TEST_ANSWER
 
 
 def test_find_pattern_in_array():
@@ -85,3 +92,9 @@ def test_get_up_left_to_low_right_diagonal_grid():
         ["d"],
     ]
     assert get_up_left_to_low_right_diagonal_grid(grid) == expected_resulting_grid
+
+
+def test_apply_xmas_convolution_to_position():
+    grid = create_grid("test.txt")
+    assert not apply_xmas_convolution_to_position(grid, 0, 0)
+    assert apply_xmas_convolution_to_position(grid, 0, 1)

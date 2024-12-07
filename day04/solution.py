@@ -3,6 +3,8 @@ from pathlib import Path
 
 CURRENT_FOLDER = Path(__file__).parent
 REGEX_PATTERN = r"XMAS"
+XMAS_CONVOLUTION_WIDTH = 3
+XMAS_CONVOLUTION_HEIGTH = 3
 
 
 def create_grid(filename: str) -> list[list[str]]:
@@ -95,5 +97,52 @@ def get_up_left_to_low_right_diagonal_grid(grid: list[list[str]]) -> list[list[s
 
     return rotated_grid
 
+
+def part_2(filename: str) -> int:
+    grid = create_grid(filename)
+
+    result = 0
+    print(len(grid))
+    for x in range(len(grid) - XMAS_CONVOLUTION_WIDTH + 1):
+        for y in range(len(grid[0]) - XMAS_CONVOLUTION_HEIGTH + 1):
+            result += apply_xmas_convolution_to_position(grid, x, y)
+
+    return result
+
+
+def apply_xmas_convolution_to_position(grid: list[list[str]], x: int, y: int) -> bool:
+    return (
+        (
+            grid[x][y] == "M"
+            and grid[x][y + 2] == "S"
+            and grid[x + 1][y + 1] == "A"
+            and grid[x + 2][y] == "M"
+            and grid[x + 2][y + 2] == "S"
+        )
+        or (
+            grid[x][y] == "M"
+            and grid[x][y + 2] == "M"
+            and grid[x + 1][y + 1] == "A"
+            and grid[x + 2][y] == "S"
+            and grid[x + 2][y + 2] == "S"
+        )
+        or (
+            grid[x][y] == "S"
+            and grid[x][y + 2] == "S"
+            and grid[x + 1][y + 1] == "A"
+            and grid[x + 2][y] == "M"
+            and grid[x + 2][y + 2] == "M"
+        )
+        or (
+            grid[x][y] == "S"
+            and grid[x][y + 2] == "M"
+            and grid[x + 1][y + 1] == "A"
+            and grid[x + 2][y] == "S"
+            and grid[x + 2][y + 2] == "M"
+        )
+    )
+
+
 if __name__ == "__main__":
     print("Part 1: ", part_1("input.txt"))
+    print("Part 2: ", part_2("input.txt"))
